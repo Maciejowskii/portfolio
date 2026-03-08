@@ -28,3 +28,16 @@ model Post {
   @@index([slug])
   @@index([language])
 }
+
+model ScheduledTopic {
+  id          Int      @id @default(autoincrement())
+  topic       String
+  keywords    String   @default("")
+  language    String   @default("pl")
+  scheduledAt DateTime
+  generated   Boolean  @default(false)
+  postId      Int?
+  createdAt   DateTime @default(now())
+
+  @@index([generated, scheduledAt])
+}

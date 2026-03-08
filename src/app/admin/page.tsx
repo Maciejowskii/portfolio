@@ -74,7 +74,37 @@ export default function AdminDashboard() {
             Blog Admin
           </h1>
         </div>
-        <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
+        <div style={{ display: "flex", gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
+          <a
+            href="/admin/generate"
+            style={{
+              padding: "8px 18px",
+              borderRadius: "10px",
+              background: "rgba(139,92,246,0.12)",
+              color: "#a78bfa",
+              border: "1px solid rgba(139,92,246,0.2)",
+              fontSize: "12px",
+              fontWeight: 500,
+              textDecoration: "none",
+            }}
+          >
+            AI Generate
+          </a>
+          <a
+            href="/admin/schedule"
+            style={{
+              padding: "8px 18px",
+              borderRadius: "10px",
+              background: "rgba(6,182,212,0.1)",
+              color: "#06B6D4",
+              border: "1px solid rgba(6,182,212,0.2)",
+              fontSize: "12px",
+              fontWeight: 500,
+              textDecoration: "none",
+            }}
+          >
+            Schedule
+          </a>
           <a
             href="/admin/new"
             style={{
@@ -85,7 +115,6 @@ export default function AdminDashboard() {
               fontSize: "13px",
               fontWeight: 500,
               textDecoration: "none",
-              transition: "opacity 0.2s",
             }}
           >
             + New Post
