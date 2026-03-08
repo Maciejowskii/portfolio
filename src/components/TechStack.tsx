@@ -10,7 +10,7 @@ const categories = [
   },
   {
     label: "Backend / Infrastructure",
-    items: ["Node.js", "PostgreSQL", "Docker", "REST APIs", "Linux / VPS"],
+    items: ["Node.js", "Django", "PostgreSQL", "Docker", "REST APIs", "Linux / VPS", "Nginx"],
     color: "#06B6D4",
   },
   {

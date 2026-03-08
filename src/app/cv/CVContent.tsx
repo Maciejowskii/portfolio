@@ -11,21 +11,64 @@ const experience = [
     url: "https://digitay.pl",
     period: "2023 — Present",
     description:
-      "Leading technical strategy and development for a digital agency specializing in web development, SEO, Google Ads, and marketing automation. Responsible for architecture decisions, team coordination, client-facing technical consulting, and hands-on engineering across all projects.",
+      "Leading technical strategy, team management, and hands-on development for a digital agency serving 30+ active clients. Responsible for full-stack development, client consulting, SEO strategy, Google Business management, and end-to-end project delivery across web development, e-commerce, and digital marketing.",
     highlights: [
-      "Built and shipped production web apps, business websites, and lead-generation platforms for diverse clients",
-      "Implemented SEO strategies, analytics stacks (GTM, GA4), and conversion tracking pipelines",
-      "Managed end-to-end project delivery from discovery to deployment on VPS infrastructure",
-      "Established technical standards, code review workflows, and CI/CD processes",
+      "Build and deliver custom websites and online stores for clients using Next.js, Django, and CMS platforms (WordPress, Sellstick)",
+      "Optimize and fix existing WordPress and CMS-based e-commerce stores — page speed improvements, technical debt resolution, conversion-oriented UX",
+      "Plan and execute SEO strategies — technical audits, on-page optimization, keyword research, SEO-friendly blog content writing",
+      "Create and manage Google Business Profiles — optimizing local visibility, review management, accurate business information",
+      "Direct client consulting — translating business goals into technical requirements, maintaining long-term relationships",
+      "Team management — code reviews, task delegation, sprint planning, quality assurance, and mentoring developers",
+      "Implemented analytics stacks (GTM, GA4), conversion tracking pipelines, and Google/Meta Ads campaigns",
+      "Managed end-to-end project delivery from discovery to deployment on VPS infrastructure with Nginx",
     ],
   },
 ];
 
-const education = [
+const keyProjects = [
   {
-    degree: "Self-taught & Continuous Learning",
+    name: "Katalogo.pl",
+    url: "https://www.katalogo.pl",
+    role: "Lead Developer & Architect",
     description:
-      "Practical expertise built through real-world project delivery, technical documentation, open-source contributions, and structured online learning across full-stack development, DevOps, and digital marketing.",
+      "Full-stack business directory platform — the largest verified business database in Poland with 71,000+ listed companies and 250K–300K monthly visitors.",
+    highlights: [
+      "Architected the entire platform from scratch — database schema, API layer, SSR/SSG rendering, component system",
+      "Built a multi-tenant data pipeline with automated deduplication and category mapping across 4,900+ industry categories",
+      "Implemented SEO-first architecture — dynamic sitemaps, JSON-LD structured data, semantic HTML, optimized meta tags",
+      "Designed scalable search with PostgreSQL full-text search, city + category compound filtering, server component rendering",
+      "Created the 'Strefa Partnera' — business self-registration, profile editing, photo uploads, promoted listings",
+      "Performance-optimized for Core Web Vitals — lazy loading, image optimization, Prisma query tuning",
+    ],
+    tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Python", "Tailwind CSS", "Docker"],
+  },
+  {
+    name: "AI Trainer",
+    url: "https://github.com/Maciejowskii/AI-TRAINER",
+    role: "Developer & ML Engineer",
+    description:
+      "Custom AI model for image recognition and object detection — built as a vision backbone for automation bots and intelligent agents.",
+    highlights: [
+      "Developed a cascade classifier training pipeline using OpenCV — dataset collection, labeling, supervised learning",
+      "Built HSV color-space filtering and edge detection modules for real-time object detection",
+      "Created a real-time window capture system for live screen analysis, frame-by-frame processing",
+      "Modular architecture: separate vision, filtering, and capture layers pluggable into any automation framework",
+    ],
+    tech: ["Python", "OpenCV", "Cascade Classifiers", "Computer Vision", "NumPy"],
+  },
+  {
+    name: "C++ Algorithms & Data Structures",
+    url: "https://github.com/Maciejowskii",
+    role: "Developer",
+    description:
+      "A collection of 7 standalone C++ projects exploring core CS fundamentals — sorting algorithms, queue data structures, file processing, and time logic.",
+    highlights: [
+      "Implemented Bubble Sort, Bucket Sort, and general-purpose sorting toolkits with manual memory handling",
+      "Built custom queue (FIFO) data structures — standalone and integrated with sorting for priority-based processing",
+      "Developed a Linux file sorting utility using C++ I/O streams and POSIX interfaces",
+      "All raw implementations — no STL sort, no external dependencies — focused on algorithmic internals",
+    ],
+    tech: ["C++", "Algorithms", "Data Structures", "Memory Management", "POSIX", "Linux"],
   },
 ];
 
@@ -36,31 +79,51 @@ const technicalSkills = [
   },
   {
     category: "Backend & Infrastructure",
-    items: ["Node.js", "PostgreSQL", "Docker", "REST APIs", "Linux / VPS", "Nginx"],
+    items: ["Node.js", "Django", "PostgreSQL", "Prisma", "Docker", "REST APIs", "Linux / VPS", "Nginx"],
   },
   {
-    category: "CMS & Web Platforms",
-    items: ["WordPress", "Custom Themes & Plugins", "Headless CMS", "Component-driven Architecture"],
+    category: "CMS & E-commerce",
+    items: ["WordPress", "Sellstick", "Custom Themes & Plugins", "Headless CMS", "WooCommerce"],
+  },
+  {
+    category: "AI & Data",
+    items: ["Python", "OpenCV", "Computer Vision", "Cascade Classifiers", "NumPy", "Data Pipelines"],
   },
   {
     category: "Analytics & Marketing Tech",
-    items: ["Google Tag Manager", "Google Analytics (GA4)", "Google Ads", "Meta Ads", "Technical SEO"],
+    items: ["Google Tag Manager", "Google Analytics (GA4)", "Google Ads", "Meta Ads", "Google Business", "Technical SEO"],
   },
   {
     category: "Workflow & DevOps",
     items: ["Git / GitHub", "CI/CD Pipelines", "VPS Deployment", "Performance Optimization", "Technical SEO Audits"],
   },
+  {
+    category: "Languages (Programming)",
+    items: ["TypeScript", "JavaScript", "Python", "C++"],
+  },
 ];
 
 const competencies = [
   "Full-stack application architecture & development",
-  "SEO-conscious web development & technical audits",
-  "Conversion-focused website design & implementation",
-  "API design, integration & third-party system connectivity",
-  "Analytics implementation & data-driven optimization",
-  "Team technical leadership & project delivery management",
+  "Custom website & e-commerce store delivery",
+  "CMS optimization & technical debt resolution",
+  "SEO strategy, audits & content writing",
+  "Google Business Profile management",
+  "Client consulting & relationship management",
+  "Team leadership, code review & mentoring",
+  "API design, integration & third-party connectivity",
+  "Analytics implementation & conversion tracking",
+  "Machine learning & computer vision prototyping",
+  "Performance optimization (Core Web Vitals, UX)",
   "Business requirements analysis & solution design",
-  "Performance optimization (Core Web Vitals, load times, UX)",
+];
+
+const education = [
+  {
+    degree: "Self-taught & Continuous Learning",
+    description:
+      "Practical expertise built through real-world project delivery for 30+ clients, open-source contributions, technical documentation study, and structured online learning across full-stack development, machine learning, DevOps, and digital marketing.",
+  },
 ];
 
 const languages = [
@@ -167,14 +230,14 @@ export default function CVContent() {
               Full-Stack Developer · CTO & Co-Founder at Digitay.pl
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px", fontSize: "13px", color: "#737373" }}>
-              <span>📍 Poland</span>
+              <span>Poland</span>
               <a
                 href="mailto:m.tyra@digitay.pl"
                 style={{ color: "#737373", textDecoration: "none", transition: "color 0.3s" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#d4d4d4")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "#737373")}
               >
-                ✉ m.tyra@digitay.pl
+                m.tyra@digitay.pl
               </a>
               <a
                 href="https://digitay.pl"
@@ -184,7 +247,7 @@ export default function CVContent() {
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#d4d4d4")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "#737373")}
               >
-                🌐 digitay.pl
+                digitay.pl
               </a>
             </div>
           </div>
@@ -196,17 +259,18 @@ export default function CVContent() {
         <AnimateOnScroll delay={0.05}>
           <SectionLabel>Profile</SectionLabel>
           <p style={{ fontSize: "1.05rem", lineHeight: 1.85, color: "#d4d4d4", fontWeight: 300, marginBottom: "16px" }}>
-            Full-stack developer with hands-on experience building modern web
-            applications, premium business websites, dashboards, and marketing
-            tech systems. As CTO & Co-Founder of Digitay.pl, I lead technical
-            strategy, architecture decisions, and end-to-end project delivery
-            for a digital agency serving clients in web development, SEO, and
-            paid advertising.
+            Full-stack developer and technical leader with hands-on experience
+            building modern web applications, e-commerce stores, business
+            websites, AI/ML prototypes, and marketing tech systems. As CTO &
+            Co-Founder of Digitay.pl, I lead a team serving 30+ active clients
+            — managing everything from architecture and development to SEO
+            strategy, client consulting, and team coordination.
           </p>
           <p style={{ fontSize: "1.05rem", lineHeight: 1.85, color: "#a3a3a3", fontWeight: 300 }}>
-            I merge clean engineering with product thinking, performance awareness,
-            and business understanding — delivering solutions that are not only
-            technically sound but designed to produce real outcomes.
+            I merge clean engineering with product thinking, performance
+            awareness, and business understanding — delivering solutions across
+            Next.js, Django, WordPress, and Python that are technically sound
+            and designed to produce real, measurable outcomes.
           </p>
         </AnimateOnScroll>
 
@@ -282,6 +346,92 @@ export default function CVContent() {
               </ul>
             </div>
           ))}
+        </AnimateOnScroll>
+
+        <Divider />
+
+        {/* ── Key Projects ── */}
+        <AnimateOnScroll delay={0.12}>
+          <SectionLabel>Key Projects</SectionLabel>
+          <div style={{ display: "flex", flexDirection: "column", gap: "40px" }}>
+            {keyProjects.map((proj) => (
+              <div
+                key={proj.name}
+                style={{
+                  padding: "28px",
+                  borderRadius: "16px",
+                  border: "1px solid rgba(255,255,255,0.05)",
+                  background: "rgba(255,255,255,0.02)",
+                }}
+              >
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", flexWrap: "wrap", gap: "8px", marginBottom: "4px" }}>
+                  <h3 style={{ fontSize: "1.1rem", fontWeight: 600, color: "#f5f5f5" }}>
+                    {proj.name}
+                  </h3>
+                  <span style={{ fontSize: "12px", color: "#525252", fontFamily: "var(--font-jetbrains), monospace" }}>
+                    {proj.role}
+                  </span>
+                </div>
+                <a
+                  href={proj.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ fontSize: "13px", color: "#a78bfa", textDecoration: "none", display: "inline-block", marginBottom: "12px" }}
+                >
+                  {proj.url.replace("https://", "").replace("www.", "")} ↗
+                </a>
+                <p style={{ fontSize: "13px", lineHeight: 1.7, color: "#a3a3a3", fontWeight: 300, marginBottom: "16px" }}>
+                  {proj.description}
+                </p>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "8px", marginBottom: "16px" }}>
+                  {proj.highlights.map((h, i) => (
+                    <li
+                      key={i}
+                      style={{
+                        fontSize: "12px",
+                        lineHeight: 1.65,
+                        color: "#737373",
+                        fontWeight: 300,
+                        paddingLeft: "16px",
+                        position: "relative",
+                      }}
+                    >
+                      <span
+                        style={{
+                          position: "absolute",
+                          left: 0,
+                          top: "6px",
+                          width: "4px",
+                          height: "4px",
+                          borderRadius: "50%",
+                          background: "#06B6D4",
+                          opacity: 0.4,
+                        }}
+                      />
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+                  {proj.tech.map((t) => (
+                    <span
+                      key={t}
+                      style={{
+                        fontSize: "10px",
+                        fontFamily: "var(--font-jetbrains), monospace",
+                        color: "#525252",
+                        padding: "3px 10px",
+                        borderRadius: "9999px",
+                        border: "1px solid rgba(255,255,255,0.05)",
+                      }}
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </AnimateOnScroll>
 
         <Divider />

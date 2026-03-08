@@ -65,20 +65,7 @@ export default function Contact() {
 
   return (
     <section id="contact" style={{ padding: "128px 24px", position: "relative" }}>
-      {/* Ambient glow — pre-softened gradient, minimal blur */}
-      <div
-        className="absolute pointer-events-none"
-        style={{
-          top: "50%",
-          left: "50%",
-          width: "120vw",
-          height: "80vh",
-          transform: "translate(-50%, -50%) translateZ(0)",
-          background: "radial-gradient(ellipse, rgba(139,92,246,0.06) 0%, rgba(139,92,246,0.02) 30%, transparent 55%)",
-          filter: "blur(10px)",
-          willChange: "transform",
-        }}
-      />
+{/* WebGL background handles ambient glow */}
 
       <div style={{ position: "relative", zIndex: 10, maxWidth: "800px", margin: "0 auto" }}>
         {/* Header */}

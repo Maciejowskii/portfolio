@@ -8,18 +8,15 @@ export default function Hero() {
       className="relative overflow-hidden"
       style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "160px 24px 80px" }}
     >
-      {/* Hero radial glow — large and pre-softened to avoid pixelation */}
+      {/* Subtle top vignette for depth */}
       <div
         className="absolute pointer-events-none"
         style={{
-          top: "-40%",
-          left: "50%",
-          width: "140vw",
-          height: "100vh",
-          transform: "translateX(-50%) translateZ(0)",
-          background: "radial-gradient(ellipse at center, rgba(139,92,246,0.1) 0%, rgba(6,182,212,0.03) 35%, transparent 60%)",
-          filter: "blur(10px)",
-          willChange: "transform",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: "40vh",
+          background: "linear-gradient(to bottom, rgba(3,3,3,0.6) 0%, transparent 100%)",
         }}
       />
 
