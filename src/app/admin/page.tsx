@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
+import { PenLine } from "lucide-react";
 
 interface Post {
   id: number;
@@ -165,7 +166,7 @@ export default function AdminDashboard() {
               color: "#525252",
             }}
           >
-            <p style={{ fontSize: "3rem", marginBottom: "16px" }}>&#9998;</p>
+            <PenLine size={48} color="#525252" strokeWidth={1.2} style={{ marginBottom: "16px", margin: "0 auto 16px" }} />
             <p style={{ fontSize: "1.1rem", color: "#737373", marginBottom: "8px" }}>
               No posts yet
             </p>

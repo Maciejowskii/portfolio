@@ -1,45 +1,46 @@
 "use client";
 
+import { Wrench, Zap, Link2, Globe, TrendingUp, BarChart3 } from "lucide-react";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 const features = [
   {
-    icon: "🔧",
+    icon: Wrench,
     title: "Full-Stack Development",
     description:
       "End-to-end application architecture — from database schema and API design to polished, responsive interfaces. Building complete systems that scale with your business.",
     color: "#8B5CF6",
   },
   {
-    icon: "⚡",
+    icon: Zap,
     title: "High-Performance Frontend",
     description:
       "Pixel-perfect interfaces built with React, Next.js, and TypeScript. Optimized for Core Web Vitals, accessibility, and fluid user experience across all devices.",
     color: "#06B6D4",
   },
   {
-    icon: "🔗",
+    icon: Link2,
     title: "Backend & Integrations",
     description:
       "Robust server-side logic with Node.js, REST APIs, PostgreSQL, and Docker. Connecting systems, automating workflows, and building reliable data pipelines.",
     color: "#8B5CF6",
   },
   {
-    icon: "🌐",
+    icon: Globe,
     title: "WordPress & Custom Websites",
     description:
       "Professional business websites with custom themes, component-driven development, and conversion-focused design. Reliable, fast, and easy to manage.",
     color: "#06B6D4",
   },
   {
-    icon: "📈",
+    icon: TrendingUp,
     title: "SEO-Conscious Architecture",
     description:
       "Technical foundations built for organic visibility. Proper meta structure, semantic HTML, performance optimization, and search-friendly architecture from day one.",
     color: "#10B981",
   },
   {
-    icon: "📊",
+    icon: BarChart3,
     title: "Analytics & Tracking",
     description:
       "Implementation of Google Tag Manager, Google Analytics, conversion tracking, and marketing tech stack integration. Data-driven decisions from proper measurement.",
@@ -74,7 +75,9 @@ export default function FeatureGrid() {
             gap: "20px",
           }}
         >
-          {features.map((feature, i) => (
+          {features.map((feature, i) => {
+            const Icon = feature.icon;
+            return (
             <AnimateOnScroll key={feature.title} delay={0.15 + i * 0.08}>
               <div
                 className="glass-card"
@@ -106,11 +109,10 @@ export default function FeatureGrid() {
                     alignItems: "center",
                     justifyContent: "center",
                     marginBottom: "24px",
-                    fontSize: "22px",
                     transition: "transform 0.5s cubic-bezier(0.23,1,0.32,1)",
                   }}
                 >
-                  {feature.icon}
+                  <Icon size={24} color={feature.color} strokeWidth={1.5} />
                 </div>
                 <h3
                   className="heading-serif"
@@ -123,7 +125,8 @@ export default function FeatureGrid() {
                 </p>
               </div>
             </AnimateOnScroll>
-          ))}
+          );
+          })}
         </div>
       </div>
     </section>

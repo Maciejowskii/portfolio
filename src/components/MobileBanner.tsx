@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Monitor } from "lucide-react";
 
 export default function MobileBanner() {
   const [visible, setVisible] = useState(false);
@@ -49,7 +50,7 @@ export default function MobileBanner() {
           boxShadow: "0 -4px 40px rgba(0,0,0,0.5), 0 0 30px -10px rgba(139,92,246,0.1)",
         }}
       >
-        <span style={{ fontSize: "20px", flexShrink: 0 }}>💻</span>
+        <Monitor size={22} color="#a78bfa" strokeWidth={1.5} style={{ flexShrink: 0 }} />
         <div style={{ flex: 1, minWidth: 0 }}>
           <p style={{ fontSize: "12px", fontWeight: 500, color: "#e5e5e5", marginBottom: "2px" }}>
             Best viewed on desktop
