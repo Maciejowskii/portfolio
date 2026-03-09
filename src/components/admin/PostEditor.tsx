@@ -68,7 +68,7 @@ const labelStyle: React.CSSProperties = {
   fontFamily: "var(--font-jetbrains), monospace",
   letterSpacing: "0.1em",
   textTransform: "uppercase" as const,
-  color: "#525252",
+  color: "#737373",
   marginBottom: "6px",
   display: "block",
 };
@@ -156,12 +156,36 @@ export default function PostEditor({ postId }: { postId?: number }) {
   }
 
   async function handlePublishNow() {
-    setPost((p) => ({
-      ...p,
+    setError("");
+    setSaving(true);
+
+    const body = {
+      ...post,
       status: "published",
-      publishedAt: new Date().toISOString().slice(0, 16),
-    }));
-    setTimeout(handleSave, 100);
+      publishedAt: post.publishedAt || new Date().toISOString().slice(0, 16),
+    };
+
+    try {
+      const url = postId ? `/api/posts/${postId}` : "/api/posts";
+      const method = postId ? "PUT" : "POST";
+      const res = await fetch(url, {
+        method,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        setError(data.error || "Failed to publish");
+        setSaving(false);
+        return;
+      }
+
+      router.push("/admin");
+    } catch {
+      setError("Network error");
+      setSaving(false);
+    }
   }
 
   return (
@@ -338,9 +362,9 @@ export default function PostEditor({ postId }: { postId?: number }) {
                 onChange={(e) => handleChange("status", e.target.value)}
                 style={{ ...inputStyle, cursor: "pointer" }}
               >
-                <option value="draft">Draft</option>
-                <option value="scheduled">Scheduled</option>
-                <option value="published">Published</option>
+                <option value="draft" style={{ background: "#1a1a1a", color: "#f5f5f5" }}>Draft</option>
+                <option value="scheduled" style={{ background: "#1a1a1a", color: "#f5f5f5" }}>Scheduled</option>
+                <option value="published" style={{ background: "#1a1a1a", color: "#f5f5f5" }}>Published</option>
               </select>
             </div>
 
@@ -352,8 +376,8 @@ export default function PostEditor({ postId }: { postId?: number }) {
                 onChange={(e) => handleChange("language", e.target.value)}
                 style={{ ...inputStyle, cursor: "pointer" }}
               >
-                <option value="pl">Polish (PL)</option>
-                <option value="en">English (EN)</option>
+                <option value="pl" style={{ background: "#1a1a1a", color: "#f5f5f5" }}>Polish (PL)</option>
+                <option value="en" style={{ background: "#1a1a1a", color: "#f5f5f5" }}>English (EN)</option>
               </select>
             </div>
 

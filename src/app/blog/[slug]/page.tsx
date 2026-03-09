@@ -59,7 +59,7 @@ export default async function BlogPostPage({
     notFound();
   }
 
-  const prevNext = await Promise.all([
+  const [prevPost, nextPost, relatedPosts] = await Promise.all([
     prisma.post.findFirst({
       where: {
         status: "published",
@@ -76,6 +76,24 @@ export default async function BlogPostPage({
       orderBy: { publishedAt: "asc" },
       select: { title: true, slug: true },
     }),
+    prisma.post.findMany({
+      where: {
+        status: "published",
+        slug: { not: post.slug },
+        publishedAt: { lte: new Date() },
+      },
+      orderBy: { publishedAt: "desc" },
+      take: 6,
+      select: {
+        title: true,
+        slug: true,
+        excerpt: true,
+        coverImage: true,
+        publishedAt: true,
+        tags: true,
+        language: true,
+      },
+    }),
   ]);
 
   return (
@@ -87,8 +105,13 @@ export default async function BlogPostPage({
         createdAt: post.createdAt.toISOString(),
         updatedAt: post.updatedAt.toISOString(),
       }}
-      prev={prevNext[0]}
-      next={prevNext[1]}
+      prev={prevPost}
+      next={nextPost}
+      relatedPosts={relatedPosts.map((p) => ({
+        ...p,
+        tags: JSON.parse(p.tags || "[]") as string[],
+        publishedAt: p.publishedAt?.toISOString() || null,
+      }))}
     />
   );
 }
