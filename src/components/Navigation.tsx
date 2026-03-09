@@ -4,9 +4,7 @@ import { useState, useEffect } from "react";
 
 const navLinks = [
   { label: "About", href: "#about" },
-  { label: "Stack", href: "#stack" },
   { label: "Projects", href: "#projects" },
-  { label: "Process", href: "#process" },
   { label: "Blog", href: "/blog" },
   { label: "CV", href: "/cv" },
   { label: "Contact", href: "#contact" },
@@ -28,7 +26,7 @@ export default function Navigation() {
         className="fixed top-5 left-1/2 z-50 glass rounded-full"
         style={{
           transform: "translateX(-50%)",
-          width: "min(95%, 672px)",
+          width: "min(95%, 680px)",
           transition: "box-shadow 0.6s cubic-bezier(0.23,1,0.32,1)",
           boxShadow: scrolled
             ? "0 0 40px -10px rgba(139,92,246,0.15), 0 8px 32px rgba(0,0,0,0.4)"
@@ -48,7 +46,7 @@ export default function Navigation() {
             MT
           </a>
 
-          <div className="hidden md:flex items-center gap-7">
+          <div className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
               <a
                 key={link.href}
