@@ -49,7 +49,7 @@ const features = [
 
 export default function FeatureGrid() {
   return (
-    <section style={{ padding: "128px 24px", position: "relative" }}>
+    <section className="section-pad" style={{ padding: "128px 24px", position: "relative" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         <AnimateOnScroll>
           <p className="label-mono" style={{ marginBottom: "16px", textAlign: "center", color: "#a78bfa" }}>
@@ -67,6 +67,7 @@ export default function FeatureGrid() {
         </AnimateOnScroll>
 
         <div
+          className="grid-features-cols"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))",

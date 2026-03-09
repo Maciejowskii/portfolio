@@ -72,7 +72,7 @@ export default function CodeBlock() {
   };
 
   return (
-    <section style={{ padding: "128px 24px", position: "relative" }}>
+    <section className="section-pad" style={{ padding: "128px 24px", position: "relative" }}>
       <div style={{ maxWidth: "800px", margin: "0 auto" }}>
         <AnimateOnScroll>
           <p className="label-mono" style={{ marginBottom: "16px", textAlign: "center", color: "#a78bfa" }}>
@@ -139,7 +139,7 @@ export default function CodeBlock() {
             </div>
 
             {/* Code */}
-            <div style={{ padding: "24px", overflowX: "auto" }} className="no-scrollbar">
+            <div className="no-scrollbar code-block-pad" style={{ padding: "24px", overflowX: "auto" }}>
               <pre style={{ fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace", fontSize: "13px", lineHeight: 1.8, margin: 0 }}>
                 {lines.map((line, i) => (
                   <div key={i} style={{ minHeight: "1.8em" }}>

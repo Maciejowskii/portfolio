@@ -73,7 +73,7 @@ export default function BlogList({
         </a>
       </nav>
 
-      <main style={{ maxWidth: "1000px", margin: "0 auto", padding: "64px 24px 128px" }}>
+      <main className="section-pad" style={{ maxWidth: "1000px", margin: "0 auto", padding: "64px 24px 128px" }}>
         {/* Title */}
         <h1
           style={{
@@ -165,6 +165,7 @@ export default function BlogList({
           </div>
         ) : (
           <div
+            className="blog-post-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",

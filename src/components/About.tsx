@@ -16,7 +16,7 @@ const skills = [
 
 export default function About() {
   return (
-    <section id="about" style={{ padding: "128px 24px", position: "relative" }}>
+    <section id="about" className="section-pad" style={{ padding: "128px 24px", position: "relative" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
         {/* Header */}
         <AnimateOnScroll>
@@ -35,7 +35,7 @@ export default function About() {
         </AnimateOnScroll>
 
         {/* Two-column layout */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", marginBottom: "64px" }}>
+        <div className="grid-about-cols" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", marginBottom: "64px" }}>
           {/* Left: story */}
           <div>
             <AnimateOnScroll delay={0.15}>
@@ -158,7 +158,7 @@ export default function About() {
         {/* Stats row */}
         <AnimateOnScroll delay={0.3}>
           <div
-            className="glass-card"
+            className="glass-card grid-stats-cols"
             style={{
               borderRadius: "20px",
               padding: "40px",

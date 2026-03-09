@@ -308,3 +308,93 @@ body {
   color: #f5f5f5;
   font-weight: 500;
 }
+
+/* ===== RESPONSIVE / MOBILE ===== */
+@media (max-width: 768px) {
+  .section-pad {
+    padding-top: 72px !important;
+    padding-bottom: 72px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .hero-pad {
+    padding-top: 120px !important;
+    padding-bottom: 56px !important;
+    min-height: auto !important;
+  }
+
+  .grid-about-cols {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .grid-stats-cols {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+    padding: 24px !important;
+  }
+
+  .grid-features-cols {
+    grid-template-columns: 1fr !important;
+  }
+
+  .grid-projects-compact {
+    grid-template-columns: 1fr !important;
+  }
+
+  .grid-contact-cols {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .grid-contact-form-inner {
+    grid-template-columns: 1fr !important;
+  }
+
+  .featured-header-pad {
+    padding: 24px 20px 0 !important;
+  }
+
+  .featured-body-pad {
+    padding: 20px 20px 28px !important;
+  }
+
+  .featured-metrics-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .compact-project-pad {
+    padding: 24px !important;
+  }
+
+  .code-block-pad {
+    padding: 16px !important;
+  }
+
+  .glass-card-pad-mobile {
+    padding: 20px !important;
+  }
+
+  .heading-mb-mobile {
+    margin-bottom: 40px !important;
+  }
+
+  .blog-content {
+    font-size: 14px;
+  }
+
+  .blog-content pre {
+    padding: 14px 16px;
+    font-size: 12px;
+    border-radius: 10px;
+  }
+
+  .blog-content h1 { font-size: 1.5rem; }
+  .blog-content h2 { font-size: 1.3rem; }
+  .blog-content h3 { font-size: 1.1rem; }
+
+  .blog-post-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

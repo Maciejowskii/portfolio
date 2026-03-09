@@ -10,12 +10,14 @@ import CodeBlock from "@/components/CodeBlock";
 import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import MobileBanner from "@/components/MobileBanner";
 
 export default function Home() {
   return (
     <>
       <FloatingOrbs />
       <Navigation />
+      <MobileBanner />
       <main style={{ position: "relative", zIndex: 1 }}>
         <Hero />
         <Ticker />

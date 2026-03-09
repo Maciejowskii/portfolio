@@ -88,7 +88,7 @@ export default function BlogPostContent({
         </div>
       </nav>
 
-      <article style={{ maxWidth: "720px", margin: "0 auto", padding: "64px 24px 128px" }}>
+      <article className="section-pad" style={{ maxWidth: "720px", margin: "0 auto", padding: "64px 24px 128px" }}>
         {/* Header */}
         <header style={{ marginBottom: "48px" }}>
           <div
@@ -224,6 +224,7 @@ export default function BlogPostContent({
 
         {/* Prev / Next */}
         <div
+          className="grid-contact-form-inner"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",

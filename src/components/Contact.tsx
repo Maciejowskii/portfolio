@@ -64,7 +64,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" style={{ padding: "128px 24px", position: "relative" }}>
+    <section id="contact" className="section-pad" style={{ padding: "128px 24px", position: "relative" }}>
 {/* WebGL background handles ambient glow */}
 
       <div style={{ position: "relative", zIndex: 10, maxWidth: "800px", margin: "0 auto" }}>
@@ -96,7 +96,7 @@ export default function Contact() {
         </div>
 
         {/* Two-column: form + sidebar */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 300px", gap: "48px", alignItems: "start" }}>
+        <div className="grid-contact-cols" style={{ display: "grid", gridTemplateColumns: "1fr 300px", gap: "48px", alignItems: "start" }}>
           {/* Form */}
           <AnimateOnScroll delay={0.25}>
             <form
@@ -104,7 +104,7 @@ export default function Contact() {
               className="glass-card"
               style={{ borderRadius: "24px", padding: "40px" }}
             >
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "16px" }}>
+              <div className="grid-contact-form-inner" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "16px" }}>
                 <div>
                   <label
                     htmlFor="name"

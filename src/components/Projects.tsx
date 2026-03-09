@@ -132,6 +132,7 @@ function FeaturedProject({ project }: { project: Project }) {
     >
       {/* Header bar */}
       <div
+        className="featured-header-pad"
         style={{
           padding: "32px 36px 0",
           display: "flex",
@@ -209,7 +210,7 @@ function FeaturedProject({ project }: { project: Project }) {
       </div>
 
       {/* Content */}
-      <div style={{ padding: "24px 36px 36px" }}>
+      <div className="featured-body-pad" style={{ padding: "24px 36px 36px" }}>
         <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#a3a3a3", fontWeight: 300, marginBottom: "32px", maxWidth: "720px" }}>
           {project.description}
         </p>
@@ -217,6 +218,7 @@ function FeaturedProject({ project }: { project: Project }) {
         {/* Metrics */}
         {project.metrics && project.metrics.length > 1 && (
           <div
+            className="featured-metrics-grid"
             style={{
               display: "grid",
               gridTemplateColumns: `repeat(${project.metrics.length}, 1fr)`,
@@ -307,7 +309,7 @@ function FeaturedProject({ project }: { project: Project }) {
 function CompactProject({ project }: { project: Project }) {
   return (
     <article
-      className="glass-card"
+      className="glass-card compact-project-pad"
       style={{
         borderRadius: "24px",
         padding: "36px",
@@ -429,7 +431,7 @@ export default function Projects() {
   const rest = projects.filter((p) => !p.featured);
 
   return (
-    <section id="projects" style={{ padding: "128px 24px", position: "relative" }}>
+    <section id="projects" className="section-pad" style={{ padding: "128px 24px", position: "relative" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
         <AnimateOnScroll>
           <p className="label-mono" style={{ marginBottom: "16px", textAlign: "center", color: "#a78bfa" }}>
@@ -457,7 +459,7 @@ export default function Projects() {
 
         {/* Compact projects grid */}
         {rest.length > 0 && (
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))", gap: "20px" }}>
+          <div className="grid-projects-compact" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))", gap: "20px" }}>
             {rest.map((project, i) => (
               <AnimateOnScroll key={project.title} delay={0.2 + i * 0.08}>
                 <CompactProject project={project} />

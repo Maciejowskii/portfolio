@@ -37,7 +37,7 @@ const steps = [
 
 export default function Experience() {
   return (
-    <section id="process" style={{ padding: "128px 24px", position: "relative" }}>
+    <section id="process" className="section-pad" style={{ padding: "128px 24px", position: "relative" }}>
       <div style={{ maxWidth: "800px", margin: "0 auto" }}>
         <AnimateOnScroll>
           <p className="label-mono" style={{ marginBottom: "16px", textAlign: "center", color: "#a78bfa" }}>

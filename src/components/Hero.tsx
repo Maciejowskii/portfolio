@@ -5,7 +5,7 @@ import AnimateOnScroll from "./AnimateOnScroll";
 export default function Hero() {
   return (
     <section
-      className="relative overflow-hidden"
+      className="relative overflow-hidden hero-pad"
       style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "160px 24px 80px" }}
     >
       {/* Subtle top vignette for depth */}
@@ -51,10 +51,7 @@ export default function Hero() {
               color: "#f5f5f5",
             }}
           >
-            I build fast, scalable
-            <br />
-            digital experiences that
-            <br />
+            I build fast, scalable digital experiences that{" "}
             <span className="text-shimmer">perform with purpose</span>
           </h1>
         </AnimateOnScroll>

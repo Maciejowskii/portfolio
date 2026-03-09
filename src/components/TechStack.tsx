@@ -32,7 +32,7 @@ const categories = [
 
 export default function TechStack() {
   return (
-    <section id="stack" style={{ padding: "128px 24px", position: "relative" }}>
+    <section id="stack" className="section-pad" style={{ padding: "128px 24px", position: "relative" }}>
       <div style={{ maxWidth: "900px", margin: "0 auto" }}>
         <AnimateOnScroll>
           <p className="label-mono" style={{ marginBottom: "16px", textAlign: "center", color: "#a78bfa" }}>
