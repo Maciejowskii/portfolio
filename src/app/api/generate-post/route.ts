@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { isAuthenticated } from "@/lib/auth";
 import { generateBlogPost } from "@/lib/ai-generate";
+import { normalizeTags } from "@/lib/blog-utils";
 import { prisma } from "@/lib/prisma";
 
 export const maxDuration = 60;
@@ -38,7 +39,7 @@ export async function POST(req: NextRequest) {
         metaTitle: generated.metaTitle,
         metaDescription: generated.metaDescription,
         coverImage: generated.coverImage,
-        tags: JSON.stringify(generated.tags),
+        tags: JSON.stringify(normalizeTags(generated.tags)),
       },
     });
 

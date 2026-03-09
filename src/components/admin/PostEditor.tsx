@@ -73,14 +73,35 @@ const labelStyle: React.CSSProperties = {
   display: "block",
 };
 
+interface TagWithCount {
+  tag: string;
+  count: number;
+}
+
 export default function PostEditor({ postId }: { postId?: number }) {
   const [post, setPost] = useState<PostData>(EMPTY_POST);
   const [tagInput, setTagInput] = useState("");
+  const [existingTags, setExistingTags] = useState<TagWithCount[]>([]);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
   const [showPreview, setShowPreview] = useState(false);
   const [slugManual, setSlugManual] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    fetch("/api/tags")
+      .then((r) => r.ok ? r.json() : [])
+      .then(setExistingTags)
+      .catch(() => setExistingTags([]));
+  }, []);
+
+  const tagSuggestions = tagInput.trim().length >= 2
+    ? existingTags.filter(
+        ({ tag }) =>
+          tag.toLowerCase().includes(tagInput.trim().toLowerCase()) &&
+          !post.tags.some((t) => t.toLowerCase() === tag.toLowerCase())
+      ).slice(0, 8)
+    : [];
 
   const loadPost = useCallback(async () => {
     if (!postId) return;
@@ -111,9 +132,10 @@ export default function PostEditor({ postId }: { postId?: number }) {
     });
   }
 
-  function addTag() {
-    const tag = tagInput.trim();
-    if (tag && !post.tags.includes(tag)) {
+  function addTag(suggestedTag?: string) {
+    const tag = (suggestedTag ?? tagInput.trim()).trim();
+    const exists = post.tags.some((t) => t.toLowerCase() === tag.toLowerCase());
+    if (tag && !exists) {
       setPost((p) => ({ ...p, tags: [...p.tags, tag] }));
     }
     setTagInput("");
@@ -406,22 +428,72 @@ export default function PostEditor({ postId }: { postId?: number }) {
             {/* Tags */}
             <div>
               <label style={labelStyle}>Tags</label>
-              <div style={{ display: "flex", gap: "6px", marginBottom: "8px" }}>
-                <input
-                  value={tagInput}
-                  onChange={(e) => setTagInput(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") {
-                      e.preventDefault();
-                      addTag();
-                    }
-                  }}
-                  placeholder="Add tag..."
-                  style={{ ...inputStyle, flex: 1 }}
-                />
+              <div style={{ position: "relative", display: "flex", gap: "6px", marginBottom: "8px" }}>
+                <div style={{ flex: 1, position: "relative" }}>
+                  <input
+                    value={tagInput}
+                    onChange={(e) => setTagInput(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        e.preventDefault();
+                        addTag();
+                      }
+                    }}
+                    placeholder="Add tag... (suggestions after 2 chars)"
+                    style={{ ...inputStyle, width: "100%" }}
+                  />
+                  {tagSuggestions.length > 0 && (
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: "100%",
+                        left: 0,
+                        right: 0,
+                        marginTop: "4px",
+                        background: "rgba(10,10,10,0.95)",
+                        border: "1px solid rgba(255,255,255,0.08)",
+                        borderRadius: "10px",
+                        zIndex: 50,
+                        maxHeight: "200px",
+                        overflowY: "auto",
+                      }}
+                    >
+                      {tagSuggestions.map(({ tag, count }) => (
+                        <button
+                          key={tag}
+                          type="button"
+                          onClick={() => addTag(tag)}
+                          style={{
+                            display: "block",
+                            width: "100%",
+                            padding: "10px 14px",
+                            textAlign: "left",
+                            background: "none",
+                            border: "none",
+                            color: "#d4d4d4",
+                            fontSize: "13px",
+                            cursor: "pointer",
+                            transition: "background 0.2s",
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.background = "rgba(139,92,246,0.15)";
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.background = "none";
+                          }}
+                        >
+                          {tag}
+                          <span style={{ marginLeft: "8px", fontSize: "11px", color: "#525252" }}>
+                            ({count})
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
                 <button
                   type="button"
-                  onClick={addTag}
+                  onClick={() => addTag()}
                   style={{
                     padding: "8px 14px",
                     borderRadius: "10px",

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { isAuthenticated } from "@/lib/auth";
+import { normalizeTags } from "@/lib/blog-utils";
 
 export async function GET(
   _req: NextRequest,
@@ -43,7 +44,7 @@ export async function PUT(
   if (body.metaDescription !== undefined)
     data.metaDescription = body.metaDescription;
   if (body.coverImage !== undefined) data.coverImage = body.coverImage;
-  if (body.tags !== undefined) data.tags = JSON.stringify(body.tags);
+  if (body.tags !== undefined) data.tags = JSON.stringify(normalizeTags(body.tags));
 
   try {
     const post = await prisma.post.update({

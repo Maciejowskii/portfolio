@@ -68,7 +68,7 @@ CRITICAL RULES — follow every single one:
    - "metaTitle": max 60 characters, include the primary keyword naturally.
    - "metaDescription": max 155 characters, compelling and includes keyword.
    - "slug": URL-friendly, lowercase, hyphens, no special chars, max 5-6 words.
-   - "tags": 3-6 relevant tags.
+   - "tags": 3-6 relevant tags. Use concise labels (2-4 words), title case. Prefer reusable categories: AI automation, SEO, web development, Next.js, performance, analytics, business tools, WordPress. Avoid long keyword-style phrases to keep the tag vocabulary manageable.
    - "excerpt": 1-2 sentences, compelling summary for blog list cards.
    - Use the primary keyword in the first paragraph, in at least 2 headings, and naturally throughout (aim for ~1-2% keyword density, never stuffed).
 

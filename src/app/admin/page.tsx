@@ -106,6 +106,21 @@ export default function AdminDashboard() {
             Schedule
           </a>
           <a
+            href="/admin/tags"
+            style={{
+              padding: "8px 18px",
+              borderRadius: "10px",
+              background: "rgba(16,185,129,0.08)",
+              color: "#10B981",
+              border: "1px solid rgba(16,185,129,0.2)",
+              fontSize: "12px",
+              fontWeight: 500,
+              textDecoration: "none",
+            }}
+          >
+            Tags
+          </a>
+          <a
             href="/admin/new"
             style={{
               padding: "8px 20px",

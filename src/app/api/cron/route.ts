@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { generateBlogPost } from "@/lib/ai-generate";
+import { normalizeTags } from "@/lib/blog-utils";
 
 export const maxDuration = 300;
 
@@ -51,7 +52,7 @@ export async function GET(req: NextRequest) {
           metaTitle: generated.metaTitle,
           metaDescription: generated.metaDescription,
           coverImage: generated.coverImage,
-          tags: JSON.stringify(generated.tags),
+          tags: JSON.stringify(normalizeTags(generated.tags)),
         },
       });
 

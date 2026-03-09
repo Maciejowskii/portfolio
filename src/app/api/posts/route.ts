@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { isAuthenticated } from "@/lib/auth";
+import { normalizeTags } from "@/lib/blog-utils";
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
@@ -98,7 +99,7 @@ export async function POST(req: NextRequest) {
       metaTitle: metaTitle || "",
       metaDescription: metaDescription || "",
       coverImage: coverImage || "",
-      tags: JSON.stringify(tags || []),
+      tags: JSON.stringify(normalizeTags(tags)),
     },
   });
 

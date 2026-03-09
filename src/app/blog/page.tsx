@@ -18,7 +18,7 @@ export const revalidate = 60;
 
 async function getPosts(language?: string, tag?: string, page = 1) {
   const limit = 12;
-  const empty = { posts: [] as never[], total: 0, totalPages: 0, allTags: [] as string[] };
+  const empty = { posts: [] as never[], total: 0, totalPages: 0, allTags: [] as { tag: string; count: number }[] };
 
   try {
     const where: Record<string, unknown> = {
@@ -46,20 +46,33 @@ async function getPosts(language?: string, tag?: string, page = 1) {
 
     let filtered = allPosts;
     if (tag) {
+      const tagNorm = tag.trim().toLowerCase();
       filtered = allPosts.filter((p) => {
         const tags: string[] = JSON.parse(p.tags || "[]");
-        return tags.some((t) => t.toLowerCase() === tag.toLowerCase());
+        return tags.some((t) => t.trim().toLowerCase() === tagNorm);
       });
     }
 
     const total = filtered.length;
     const paginated = filtered.slice((page - 1) * limit, page * limit);
 
-    const allTags = new Set<string>();
+    const tagCounts = new Map<string, number>();
+    const tagDisplay = new Map<string, string>();
     allPosts.forEach((p) => {
       const tags: string[] = JSON.parse(p.tags || "[]");
-      tags.forEach((t) => allTags.add(t));
+      tags.forEach((t) => {
+        const trimmed = t.trim();
+        if (!trimmed) return;
+        const key = trimmed.toLowerCase();
+        const prev = tagCounts.get(key) || 0;
+        tagCounts.set(key, prev + 1);
+        if (!tagDisplay.has(key)) tagDisplay.set(key, trimmed);
+      });
     });
+
+    const allTags = Array.from(tagCounts.entries())
+      .map(([key, count]) => ({ tag: tagDisplay.get(key) || key, count }))
+      .sort((a, b) => b.count - a.count);
 
     return {
       posts: paginated.map((p) => ({
@@ -70,7 +83,7 @@ async function getPosts(language?: string, tag?: string, page = 1) {
       })),
       total,
       totalPages: Math.ceil(total / limit),
-      allTags: Array.from(allTags).sort(),
+      allTags,
     };
   } catch {
     return empty;

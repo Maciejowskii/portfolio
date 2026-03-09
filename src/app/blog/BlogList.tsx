@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 interface BlogPost {
@@ -14,15 +15,22 @@ interface BlogPost {
   createdAt: string;
 }
 
+interface TagWithCount {
+  tag: string;
+  count: number;
+}
+
 interface Props {
   posts: BlogPost[];
   total: number;
   totalPages: number;
   currentPage: number;
-  allTags: string[];
+  allTags: TagWithCount[];
   activeLanguage?: string;
   activeTag?: string;
 }
+
+const TOP_TAGS_LIMIT = 12;
 
 function readingTime(excerpt: string): string {
   const words = excerpt.split(/\s+/).length;
@@ -40,6 +48,11 @@ export default function BlogList({
 }: Props) {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const [tagsExpanded, setTagsExpanded] = useState(false);
+
+  const topTags = allTags.slice(0, TOP_TAGS_LIMIT);
+  const restTags = allTags.slice(TOP_TAGS_LIMIT);
+  const hasMoreTags = restTags.length > 0;
 
   function buildUrl(overrides: Record<string, string | undefined>) {
     const params = new URLSearchParams(searchParams.toString());
@@ -134,8 +147,8 @@ export default function BlogList({
             <span style={{ width: "1px", background: "rgba(255,255,255,0.06)", margin: "0 4px" }} />
           )}
 
-          {/* Tag filters */}
-          {allTags.map((tag) => (
+          {/* Tag filters — top by usage, expandable */}
+          {topTags.map(({ tag }) => (
             <button
               key={tag}
               onClick={() =>
@@ -155,6 +168,46 @@ export default function BlogList({
               {tag}
             </button>
           ))}
+
+          {hasMoreTags && (
+            <>
+              <button
+                onClick={() => setTagsExpanded(!tagsExpanded)}
+                style={{
+                  padding: "6px 12px",
+                  borderRadius: "9999px",
+                  border: "1px solid rgba(255,255,255,0.06)",
+                  background: "transparent",
+                  color: "#737373",
+                  fontSize: "11px",
+                  cursor: "pointer",
+                }}
+              >
+                {tagsExpanded ? "Mniej" : `+${restTags.length} więcej`}
+              </button>
+              {tagsExpanded &&
+                restTags.map(({ tag }) => (
+                  <button
+                    key={tag}
+                    onClick={() =>
+                      router.push(buildUrl({ tag: activeTag === tag ? undefined : tag }))
+                    }
+                    style={{
+                      padding: "6px 14px",
+                      borderRadius: "9999px",
+                      border: "1px solid",
+                      borderColor: activeTag === tag ? "#06B6D4" : "rgba(255,255,255,0.06)",
+                      background: activeTag === tag ? "rgba(6,182,212,0.1)" : "transparent",
+                      color: activeTag === tag ? "#06B6D4" : "#525252",
+                      fontSize: "11px",
+                      cursor: "pointer",
+                    }}
+                  >
+                    {tag}
+                  </button>
+                ))}
+            </>
+          )}
         </div>
 
         {/* Posts grid */}
