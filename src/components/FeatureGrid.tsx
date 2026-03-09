@@ -8,7 +8,7 @@ const features = [
     icon: Wrench,
     title: "Full-Stack Development",
     description:
-      "End-to-end application architecture — from database schema and API design to polished, responsive interfaces. Building complete systems that scale with your business.",
+      "End-to-end application architecture: database schema, API design, polished responsive interfaces. Building complete systems that scale with your business.",
     color: "#8B5CF6",
   },
   {

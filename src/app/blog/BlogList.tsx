@@ -147,7 +147,7 @@ export default function BlogList({
             <span style={{ width: "1px", background: "rgba(255,255,255,0.06)", margin: "0 4px" }} />
           )}
 
-          {/* Tag filters — top by usage, expandable */}
+          {/* Tag filters: top by usage, expandable */}
           {topTags.map(({ tag }) => (
             <button
               key={tag}

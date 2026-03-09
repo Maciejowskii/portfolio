@@ -69,7 +69,7 @@ export default function GeneratePage() {
       const data = await res.json();
       router.push(`/admin/edit/${data.postId}`);
     } catch {
-      setError("Network error — try again");
+      setError("Network error. Try again.");
       setLoading(false);
     }
   }
@@ -123,7 +123,7 @@ export default function GeneratePage() {
               <textarea
                 value={topic}
                 onChange={(e) => setTopic(e.target.value)}
-                placeholder="e.g. Jak zoptymalizować Core Web Vitals w Next.js — praktyczny poradnik"
+                placeholder="e.g. Jak zoptymalizować Core Web Vitals w Next.js"
                 rows={3}
                 style={{ ...inputStyle, resize: "vertical" }}
                 disabled={loading}

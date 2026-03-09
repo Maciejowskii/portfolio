@@ -284,7 +284,7 @@ export default function AdminDashboard() {
                           month: "short",
                           year: "numeric",
                         })
-                      : "—"}
+                      : "n/a"}
                   </span>
                   <div
                     style={{

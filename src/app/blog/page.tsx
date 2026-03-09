@@ -3,11 +3,11 @@ import type { Metadata } from "next";
 import BlogList from "./BlogList";
 
 export const metadata: Metadata = {
-  title: "Blog — Maciej Tyra",
+  title: "Blog | Maciej Tyra",
   description:
     "Articles about web development, Next.js, SEO, performance optimization, and building digital products. Written by Maciej Tyra, Full-Stack Developer & CTO at Digitay.pl.",
   openGraph: {
-    title: "Blog — Maciej Tyra",
+    title: "Blog | Maciej Tyra",
     description:
       "Articles about web development, Next.js, SEO, and building digital products.",
     type: "website",

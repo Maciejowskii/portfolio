@@ -7,7 +7,7 @@ const steps = [
     number: "01",
     title: "Understand the business goal",
     description:
-      "Every project starts with understanding the real objective — not just features, but the outcome you need. Revenue, leads, efficiency, growth.",
+      "Every project starts with understanding the real objective. Not just features, but the outcome you need: revenue, leads, efficiency, growth.",
   },
   {
     number: "02",
@@ -25,7 +25,7 @@ const steps = [
     number: "04",
     title: "Optimize performance & conversions",
     description:
-      "Core Web Vitals, load times, UX flows, and conversion paths — optimized through data, testing, and continuous improvement.",
+      "Core Web Vitals, load times, UX flows, and conversion paths. Optimized through data, testing, and continuous improvement.",
   },
   {
     number: "05",
@@ -56,7 +56,7 @@ export default function Experience() {
 
         <AnimateOnScroll delay={0.15}>
           <p style={{ maxWidth: "560px", margin: "0 auto 64px", textAlign: "center", fontSize: "1.05rem", lineHeight: 1.7, color: "#737373", fontWeight: 300 }}>
-            Not just a coder — I combine product thinking, performance engineering,
+            Not just a coder. I combine product thinking, performance engineering,
             search visibility, and measurable outcomes into every project.
           </p>
         </AnimateOnScroll>

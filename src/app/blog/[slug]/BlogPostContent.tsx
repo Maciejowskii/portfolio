@@ -288,7 +288,7 @@ export default function BlogPostContent({
           )}
         </div>
 
-        {/* Related posts — "Read more" */}
+        {/* Related posts: "Read more" */}
         {relatedPosts.length > 0 && (
           <>
             <div

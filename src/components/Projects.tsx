@@ -21,14 +21,14 @@ const projects: Project[] = [
     title: "Katalogo.pl",
     category: "Business Directory Platform",
     description:
-      "Full-stack business directory platform — the largest verified business database in Poland with 71,000+ listed companies. Serves 250K–300K unique visitors monthly with real-time search, category filtering, city-based geolocation, and individual business profile pages. Includes a partner zone, business self-registration, promoted listings, and an admin panel for content management.",
+      "Full-stack business directory platform and the largest verified business database in Poland with 71,000+ listed companies. Serves 250K to 300K unique visitors monthly with real-time search, category filtering, city-based geolocation, and individual business profile pages. Includes a partner zone, business self-registration, promoted listings, and an admin panel for content management.",
     longDescription: [
-      "Architected the entire platform from scratch — database schema design, API layer, SSR/SSG rendering strategy, and frontend component system.",
+      "Architected the entire platform from scratch: database schema design, API layer, SSR/SSG rendering strategy, and frontend component system.",
       "Built a multi-tenant data pipeline ingesting and normalizing business data from multiple sources, with automated deduplication and category mapping across 4,900+ industry categories.",
-      "Implemented SEO-first architecture with dynamic sitemap generation, structured data (JSON-LD), semantic HTML, and optimized meta tags — resulting in strong organic visibility across thousands of long-tail local search queries.",
+      "Implemented SEO-first architecture with dynamic sitemap generation, structured data (JSON-LD), semantic HTML, and optimized meta tags. Result: strong organic visibility across thousands of long-tail local search queries.",
       "Designed a scalable search system with full-text PostgreSQL search, city + category compound filtering, and instant results rendering via server components.",
       "Created the 'Strefa Partnera' (Partner Zone) with business self-service: company registration, profile editing, photo uploads, and promoted listing management.",
-      "Performance-optimized for Core Web Vitals — lazy loading, image optimization, efficient database queries with Prisma, and edge-ready deployment.",
+      "Performance-optimized for Core Web Vitals: lazy loading, image optimization, efficient database queries with Prisma, and edge-ready deployment.",
     ],
     tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Python", "Tailwind CSS", "Docker"],
     metrics: [
@@ -46,12 +46,12 @@ const projects: Project[] = [
     title: "AI Trainer",
     category: "Machine Learning / Computer Vision",
     description:
-      "Custom AI model development project focused on image recognition and object detection. Built and iteratively trained a machine learning model from scratch, with a pipeline for data preparation, cascade training, and HSV/edge filtering — designed as the vision backbone for future automation bots and intelligent agents.",
+      "Custom AI model development project focused on image recognition and object detection. Built and iteratively trained a machine learning model from scratch, with a pipeline for data preparation, cascade training, and HSV/edge filtering. Designed as the vision backbone for future automation bots and intelligent agents.",
     longDescription: [
-      "Developed a custom cascade classifier training pipeline using OpenCV — collecting, labeling, and processing positive/negative image datasets for supervised learning.",
+      "Developed a custom cascade classifier training pipeline using OpenCV: collecting, labeling, and processing positive/negative image datasets for supervised learning.",
       "Built an HSV color-space filtering system (hsvfilter.py) enabling precise color-range isolation for real-time object detection in dynamic visual environments.",
       "Implemented an edge detection module (edgefilter.py) for contour-based feature extraction, improving model accuracy on complex backgrounds.",
-      "Created a real-time window capture system (windowcapture.py) for live screen analysis — enabling the vision model to process active application windows frame-by-frame.",
+      "Created a real-time window capture system (windowcapture.py) for live screen analysis. Enables the vision model to process active application windows frame by frame.",
       "Designed the architecture with modularity in mind: separate vision, filtering, and capture layers that can be plugged into any automation or bot framework.",
       "Iterated on model accuracy through multiple training rounds, tuning cascade parameters, dataset balancing, and filter thresholds to reduce false positives.",
     ],
@@ -69,14 +69,14 @@ const projects: Project[] = [
     title: "C++ Algorithms & Data Structures",
     category: "Algorithms / Logic Engineering",
     description:
-      "A collection of standalone C++ projects exploring core computer science fundamentals — sorting algorithms, queue-based data structures, file processing, and time logic. Each repo is a focused implementation of a specific algorithmic concept, built from scratch with an emphasis on understanding complexity, memory management, and low-level control flow.",
+      "A collection of standalone C++ projects exploring core computer science fundamentals: sorting algorithms, queue-based data structures, file processing, and time logic. Each repo is a focused implementation of a specific algorithmic concept, built from scratch with emphasis on understanding complexity, memory management, and low-level control flow.",
     longDescription: [
       "Implemented classic sorting algorithms including Bubble Sort and Bucket Sort with manual memory handling and performance benchmarking.",
-      "Built custom queue (FIFO) data structures from scratch — both standalone and integrated with sorting mechanisms for priority-based processing.",
+      "Built custom queue (FIFO) data structures from scratch, both standalone and integrated with sorting mechanisms for priority-based processing.",
       "Developed a Linux-targeted file sorting utility for filesystem-level data organization using C++ I/O streams and POSIX interfaces.",
       "Created a general-purpose sorting toolkit (sortcpp) consolidating multiple sorting strategies with configurable comparison functions.",
       "Designed a time-logic module handling temporal calculations, conversions, and scheduling-related operations.",
-      "All projects prioritize raw implementation over library abstractions — no STL sort, no external dependencies — to deepen understanding of algorithmic internals.",
+      "All projects prioritize raw implementation over library abstractions (no STL sort, no external dependencies) to deepen understanding of algorithmic internals.",
     ],
     subProjects: [
       { name: "bubbleSort", label: "Bubble Sort", url: "https://github.com/Maciejowskii/bubbleSort" },
@@ -98,17 +98,17 @@ const projects: Project[] = [
     featured: false,
   },
   {
-    title: "Digitay — Client Work & Agency Operations",
+    title: "Digitay: Client Work & Agency Operations",
     category: "Digital Agency / CTO Role",
     description:
-      "As CTO & Co-Founder at Digitay.pl, I lead end-to-end technical delivery for a growing portfolio of client projects — from custom-built websites and e-commerce stores to SEO strategies, Google Business management, and ongoing performance optimization. I combine hands-on development with client consulting, team management, and strategic decision-making.",
+      "As CTO & Co-Founder at Digitay.pl, I lead end-to-end technical delivery for a growing portfolio of client projects: custom-built websites and e-commerce stores, SEO strategies, Google Business management, and ongoing performance optimization. I combine hands-on development with client consulting, team management, and strategic decision-making.",
     longDescription: [
-      "Build and deliver custom websites and online stores for clients using Next.js, Django, and CMS platforms (WordPress, Sellstick) — from initial architecture to production deployment.",
-      "Optimize and fix existing WordPress and CMS-based e-commerce stores — improving page speed, resolving technical debt, and implementing conversion-oriented UX changes.",
-      "Plan and execute SEO strategies — technical audits, on-page optimization, keyword research, and writing SEO-friendly blog content that drives organic traffic.",
-      "Create and manage Google Business Profiles for clients — optimizing local visibility, handling reviews, and maintaining accurate business information.",
+      "Build and deliver custom websites and online stores for clients using Next.js, Django, and CMS platforms (WordPress, Sellstick). From initial architecture to production deployment.",
+      "Optimize and fix existing WordPress and CMS-based e-commerce stores: page speed improvements, technical debt resolution, conversion-oriented UX changes.",
+      "Plan and execute SEO strategies: technical audits, on-page optimization, keyword research, and writing SEO-friendly blog content that drives organic traffic.",
+      "Create and manage Google Business Profiles for clients. Optimizing local visibility, handling reviews, and maintaining accurate business information.",
       "Consult directly with clients to understand their needs, translate business goals into technical requirements, and maintain strong long-term relationships.",
-      "Manage the development team — code reviews, task delegation, sprint planning, quality assurance, and mentoring junior developers.",
+      "Manage the development team: code reviews, task delegation, sprint planning, quality assurance, and mentoring junior developers.",
       "Handle full-stack development across multiple frameworks: Next.js for performance-critical web apps, Django for backend-heavy solutions, WordPress for CMS-driven projects.",
     ],
     tech: ["Next.js", "Django", "WordPress", "Sellstick", "SEO", "Google Ads", "GTM", "GA4", "Tailwind CSS", "PostgreSQL"],

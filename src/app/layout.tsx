@@ -17,7 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Maciej Tyra — Full-Stack Developer",
+  title: "Maciej Tyra | Full-Stack Developer",
   description:
     "Full-stack developer building fast, scalable digital experiences that look premium and perform with purpose.",
 };

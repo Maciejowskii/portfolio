@@ -295,7 +295,7 @@ export default function PostEditor({ postId }: { postId?: number }) {
 
       <main style={{ maxWidth: "1200px", margin: "0 auto", padding: "32px 24px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 320px", gap: "32px" }}>
-          {/* Left — Editor */}
+          {/* Left: Editor */}
           <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
             {/* Title */}
             <input
@@ -348,7 +348,7 @@ export default function PostEditor({ postId }: { postId?: number }) {
             )}
           </div>
 
-          {/* Right — Sidebar */}
+          {/* Right: Sidebar */}
           <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
             {/* Slug */}
             <div>

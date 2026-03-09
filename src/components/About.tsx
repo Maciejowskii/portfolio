@@ -30,7 +30,7 @@ export default function About() {
             className="heading-serif"
             style={{ fontSize: "clamp(2.2rem, 5vw, 3.5rem)", marginBottom: "56px", color: "#f5f5f5" }}
           >
-            Maciej Tyra — <span style={{ color: "#a3a3a3" }}>developer,<br />builder, strategist</span>
+            Maciej Tyra <span style={{ color: "#a3a3a3" }}>developer,<br />builder, strategist</span>
           </h2>
         </AnimateOnScroll>
 
@@ -50,8 +50,8 @@ export default function About() {
                 >
                   Digitay.pl
                 </a>
-                </strong>{" "}
-                — a digital agency delivering web development, SEO, and marketing
+                </strong>
+                , where we deliver web development, SEO, and marketing
                 solutions for businesses across Poland and beyond.
               </p>
             </AnimateOnScroll>
@@ -60,7 +60,7 @@ export default function About() {
               <p style={{ fontSize: "1.05rem", lineHeight: 1.85, color: "#a3a3a3", fontWeight: 300, marginBottom: "24px" }}>
                 I work at the intersection of technology, performance, UX, and
                 business goals. My approach combines clean engineering with
-                product thinking — creating solutions that don&apos;t just look
+                product thinking. I create solutions that don&apos;t just look
                 good, but deliver measurable results.
               </p>
             </AnimateOnScroll>
@@ -68,7 +68,7 @@ export default function About() {
             <AnimateOnScroll delay={0.25}>
               <p style={{ fontSize: "1.05rem", lineHeight: 1.85, color: "#737373", fontWeight: 300 }}>
                 From architecture to deployment, from frontend polish to
-                analytics implementation — I cover the full spectrum of modern
+                analytics implementation. I cover the full spectrum of modern
                 web development with a focus on speed, scalability, and business
                 impact.
               </p>
@@ -87,7 +87,7 @@ export default function About() {
                   CTO & Co-Founder
                 </p>
                 <p style={{ fontSize: "14px", color: "#a3a3a3", fontWeight: 300, lineHeight: 1.5 }}>
-                  Digitay.pl — digital agency specializing in web development,
+                  Digitay.pl, a digital agency specializing in web development,
                   SEO, Google Ads, and marketing automation for businesses.
                 </p>
                 <a

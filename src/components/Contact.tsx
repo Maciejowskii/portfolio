@@ -160,9 +160,9 @@ export default function Contact() {
                 >
                   <option value="" disabled style={{ background: "#0a0a0a" }}>Select a range</option>
                   <option value="< 5 000 PLN" style={{ background: "#0a0a0a" }}>&lt; 5 000 PLN</option>
-                  <option value="5 000 – 15 000 PLN" style={{ background: "#0a0a0a" }}>5 000 – 15 000 PLN</option>
-                  <option value="15 000 – 30 000 PLN" style={{ background: "#0a0a0a" }}>15 000 – 30 000 PLN</option>
-                  <option value="30 000 – 60 000 PLN" style={{ background: "#0a0a0a" }}>30 000 – 60 000 PLN</option>
+                  <option value="5 000 - 15 000 PLN" style={{ background: "#0a0a0a" }}>5 000 do 15 000 PLN</option>
+                  <option value="15 000 - 30 000 PLN" style={{ background: "#0a0a0a" }}>15 000 do 30 000 PLN</option>
+                  <option value="30 000 - 60 000 PLN" style={{ background: "#0a0a0a" }}>30 000 do 60 000 PLN</option>
                   <option value="60 000+ PLN" style={{ background: "#0a0a0a" }}>60 000+ PLN</option>
                   <option value="To be discussed" style={{ background: "#0a0a0a" }}>To be discussed</option>
                 </select>
@@ -180,7 +180,7 @@ export default function Contact() {
                   name="message"
                   required
                   rows={5}
-                  placeholder="Tell me about your project — goals, timeline, any specific requirements..."
+                  placeholder="Tell me about your project: goals, timeline, any specific requirements..."
                   style={{ ...inputStyle, resize: "vertical", minHeight: "120px" }}
                   onFocus={inputFocusHandler}
                   onBlur={inputBlurHandler}

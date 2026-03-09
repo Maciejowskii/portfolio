@@ -9,16 +9,16 @@ const experience = [
     role: "CTO & Co-Founder",
     company: "Digitay.pl",
     url: "https://digitay.pl",
-    period: "2023 — Present",
+    period: "2023 to Present",
     description:
       "Leading technical strategy, team management, and hands-on development for a digital agency serving 30+ active clients. Responsible for full-stack development, client consulting, SEO strategy, Google Business management, and end-to-end project delivery across web development, e-commerce, and digital marketing.",
     highlights: [
       "Build and deliver custom websites and online stores for clients using Next.js, Django, and CMS platforms (WordPress, Sellstick)",
-      "Optimize and fix existing WordPress and CMS-based e-commerce stores — page speed improvements, technical debt resolution, conversion-oriented UX",
-      "Plan and execute SEO strategies — technical audits, on-page optimization, keyword research, SEO-friendly blog content writing",
-      "Create and manage Google Business Profiles — optimizing local visibility, review management, accurate business information",
-      "Direct client consulting — translating business goals into technical requirements, maintaining long-term relationships",
-      "Team management — code reviews, task delegation, sprint planning, quality assurance, and mentoring developers",
+      "Optimize and fix existing WordPress and CMS-based e-commerce stores: page speed improvements, technical debt resolution, conversion-oriented UX",
+      "Plan and execute SEO strategies: technical audits, on-page optimization, keyword research, SEO-friendly blog content writing",
+      "Create and manage Google Business Profiles: optimizing local visibility, review management, accurate business information",
+      "Direct client consulting: translating business goals into technical requirements, maintaining long-term relationships",
+      "Team management: code reviews, task delegation, sprint planning, quality assurance, and mentoring developers",
       "Implemented analytics stacks (GTM, GA4), conversion tracking pipelines, and Google/Meta Ads campaigns",
       "Managed end-to-end project delivery from discovery to deployment on VPS infrastructure with Nginx",
     ],
@@ -31,14 +31,14 @@ const keyProjects = [
     url: "https://www.katalogo.pl",
     role: "Lead Developer & Architect",
     description:
-      "Full-stack business directory platform — the largest verified business database in Poland with 71,000+ listed companies and 250K–300K monthly visitors.",
+      "Full-stack business directory platform and the largest verified business database in Poland with 71,000+ listed companies and 250K to 300K monthly visitors.",
     highlights: [
-      "Architected the entire platform from scratch — database schema, API layer, SSR/SSG rendering, component system",
+      "Architected the entire platform from scratch: database schema, API layer, SSR/SSG rendering, component system",
       "Built a multi-tenant data pipeline with automated deduplication and category mapping across 4,900+ industry categories",
-      "Implemented SEO-first architecture — dynamic sitemaps, JSON-LD structured data, semantic HTML, optimized meta tags",
+      "Implemented SEO-first architecture: dynamic sitemaps, JSON-LD structured data, semantic HTML, optimized meta tags",
       "Designed scalable search with PostgreSQL full-text search, city + category compound filtering, server component rendering",
-      "Created the 'Strefa Partnera' — business self-registration, profile editing, photo uploads, promoted listings",
-      "Performance-optimized for Core Web Vitals — lazy loading, image optimization, Prisma query tuning",
+      "Created the 'Strefa Partnera': business self-registration, profile editing, photo uploads, promoted listings",
+      "Performance-optimized for Core Web Vitals: lazy loading, image optimization, Prisma query tuning",
     ],
     tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Python", "Tailwind CSS", "Docker"],
   },
@@ -47,9 +47,9 @@ const keyProjects = [
     url: "https://github.com/Maciejowskii/AI-TRAINER",
     role: "Developer & ML Engineer",
     description:
-      "Custom AI model for image recognition and object detection — built as a vision backbone for automation bots and intelligent agents.",
+      "Custom AI model for image recognition and object detection. Built as a vision backbone for automation bots and intelligent agents.",
     highlights: [
-      "Developed a cascade classifier training pipeline using OpenCV — dataset collection, labeling, supervised learning",
+      "Developed a cascade classifier training pipeline using OpenCV: dataset collection, labeling, supervised learning",
       "Built HSV color-space filtering and edge detection modules for real-time object detection",
       "Created a real-time window capture system for live screen analysis, frame-by-frame processing",
       "Modular architecture: separate vision, filtering, and capture layers pluggable into any automation framework",
@@ -61,12 +61,12 @@ const keyProjects = [
     url: "https://github.com/Maciejowskii",
     role: "Developer",
     description:
-      "A collection of 7 standalone C++ projects exploring core CS fundamentals — sorting algorithms, queue data structures, file processing, and time logic.",
+      "A collection of 7 standalone C++ projects exploring core CS fundamentals: sorting algorithms, queue data structures, file processing, and time logic.",
     highlights: [
       "Implemented Bubble Sort, Bucket Sort, and general-purpose sorting toolkits with manual memory handling",
-      "Built custom queue (FIFO) data structures — standalone and integrated with sorting for priority-based processing",
+      "Built custom queue (FIFO) data structures: standalone and integrated with sorting for priority-based processing",
       "Developed a Linux file sorting utility using C++ I/O streams and POSIX interfaces",
-      "All raw implementations — no STL sort, no external dependencies — focused on algorithmic internals",
+      "All raw implementations (no STL sort, no external dependencies) focused on algorithmic internals",
     ],
     tech: ["C++", "Algorithms", "Data Structures", "Memory Management", "POSIX", "Linux"],
   },
@@ -263,12 +263,12 @@ export default function CVContent() {
             building modern web applications, e-commerce stores, business
             websites, AI/ML prototypes, and marketing tech systems. As CTO &
             Co-Founder of Digitay.pl, I lead a team serving 30+ active clients
-            — managing everything from architecture and development to SEO
+            and manage everything from architecture and development to SEO
             strategy, client consulting, and team coordination.
           </p>
           <p style={{ fontSize: "1.05rem", lineHeight: 1.85, color: "#a3a3a3", fontWeight: 300 }}>
             I merge clean engineering with product thinking, performance
-            awareness, and business understanding — delivering solutions across
+            awareness, and business understanding. I deliver solutions across
             Next.js, Django, WordPress, and Python that are technically sound
             and designed to produce real, measurable outcomes.
           </p>
